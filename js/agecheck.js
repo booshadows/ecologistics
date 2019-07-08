@@ -21,11 +21,10 @@
           header: 'Success!',
           body: 'You are now being redirected back to the application...'
         },
-        underAgeMsg: 'Sorry, you are not old enough to view this site...',
+        underAgeMsg: 'You must enter a valid birth date',
         underAge: null,
         errorMsg: {
-          invalidDay: 'Day is invalid or empty',
-          invalidYear: 'Year is invalid or empty'
+          invalid: 'You must enter a valid birth date'
         },
         storage: 'sessionStorage',
         storageExpires: null,
@@ -42,18 +41,25 @@
         setValues() {
           const month = $('.ac-container .month').val();
           const day = $('.ac-container .day').val();
-          _this.month = month;
+          _this.month = month.replace(/^0+/, ''); // remove leading zero
           _this.day = day.replace(/^0+/, ''); // remove leading zero
           _this.year = $('.ac-container .year').val();
         },
         validate() {
           _this.errors = [];
-          if (/^([0-9]|[12]\d|3[0-1])$/.test(_this.day) === false) {
-            _this.errors.push(settings.errorMsg.invalidDay);
+          if(
+            (/^([0-9]|[12]\d|3[0-1])$/.test(_this.day) === false) || (/^([0-12]|[6]\d|1[0-2])$/.test(_this.month) === false) || (/^(19|20)\d{2}$/.test(_this.year) === false)
+
+          )
+           {
+            _this.errors.push(settings.errorMsg.invalid);
           }
-          if (/^(19|20)\d{2}$/.test(_this.year) === false) {
-            _this.errors.push(settings.errorMsg.invalidYear);
-          }
+          // if  {
+          //   _this.errors.push(settings.errorMsg.invalid);
+          // }
+          // if  {
+          //   _this.errors.push(settings.errorMsg.invalid);
+          // }
           _this.clearErrors();
           _this.displayErrors();
           return _this.errors.length < 1;
@@ -64,7 +70,7 @@
         displayErrors() {
           let html = '<ul>';
           for (let i = 0; i < _this.errors.length; i++) {
-            html += `<li><span>x</span>${_this.errors[i]}</li>`;
+            html += `<li>${_this.errors[i]}</li>`;
           }
           html += '</ul>';
           setTimeout(() => {
@@ -77,26 +83,25 @@
         },
         buildHtml() {
           const copy = settings.copy;
-          const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+          const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
           let html = '';
           html += '<div class="ac-overlay"></div>';
           html += '<div class="ac-container">';
           html += `<h2>${settings.title}</h2>`;
+          html += '<p class="underAge">You must enter a valid birth date</p>';
+          
           html += `<p>${copy.replace('[21]', `<strong>${settings.minAge}</strong>`)}` + '</p>';
           html += '<div class="errors"></div>';
-          html += '<div class="fields"><select class="month">';
-          for (let i = 0; i < months.length; i++) {
-            html += `<option value="${i}">${months[i]}</option>`;
-          }
-          html += '</select>';
-          html += '<input class="day" maxlength="2" placeholder="01" />';
-          html += '<input class="year" maxlength="4" placeholder="1989"/>';
-          html += '<button>Submit</button></div></div>';
-  
+          html += '<div class="fields"><input class="month" maxlength="2" placeholder="MM">';
+          html += '</input>';
+          html += '<input class="day" maxlength="2" placeholder="DD" />';
+          html += '<input class="year" maxlength="4" placeholder="YY"/></div>';
+          html += '<button>Submit</button></div>';
+          
           $('body').append(html);
   
           $('.ac-overlay').animate({
-            opacity: 0.8,
+            opacity: 0.98,
           }, 500, () => {
             _this.reCenter($('.ac-container'));
             $('.ac-container').css({
@@ -104,9 +109,9 @@
             });
           });
   
-          $('.ac-container .day, .ac-container .year').focus(function () {
-            $(this).removeAttr('placeholder');
-          });
+          // $('.ac-container .day, .ac-container .year, .ac-container .month',).focus(function () {
+          //   $(this).removeAttr('placeholder');
+          // });
         },
         setAge() {
           _this.age = '';
@@ -140,15 +145,17 @@
           }
         },
         handleSuccess() {
-          const successMsg = `<h3>${settings.successMsg.header}</h3><p>${settings.successMsg.body}</p>`;
-          $('.ac-container').html(successMsg);
+          // const successMsg = `<h3>${settings.successMsg.header}</h3><p>${settings.successMsg.body}</p>`;
+          // $('.ac-container').html(successMsg);
+          $('.ac-container .errors').hide();
+          $('.underAge').hide();
           setTimeout(() => {
             $('.ac-container').animate({
               top: '-350px',
-            }, 200, () => {
+            }, 100, () => {
               $('.ac-overlay').animate({
                 opacity: '0',
-              }, 500, () => {
+              }, 100, () => {
                 if (settings.redirectTo !== '') {
                   window.location.replace(settings.redirectTo);
                 } else {
@@ -163,7 +170,8 @@
         },
         handleUnderAge() {
           const underAgeMsg = `<h3>${settings.underAgeMsg}</h3>`;
-          $('.ac-container').html(underAgeMsg);
+          // $('.ac-container').html(underAgeMsg);
+          $('.underAge').show();
           if (settings.redirectOnFail !== '') {
             setTimeout(() => {
               window.location.replace(settings.redirectOnFail);

@@ -697,9 +697,9 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.8);
+    background: #fff;
     z-index: 99998;
-    opacity:0;
+    opacity:0.9;
 	cursor: wait;
 }
 .ac-container {
@@ -708,20 +708,29 @@ footer {
     width: 360px;
     position: fixed;
     padding: 20px 20px 30px 20px;
-    background: #fff;
     z-index: 99999;
     opacity:0;
     text-align:center;
-    border-radius: 4px;
-    box-shadow:0px 0px 5px #000;
     font-weight:normal;
+    display: flex;
+    flex-direction: column;
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+    }
+
+    .underAge {
+        display: none;
+    }
 }
 .ac-container h2 {
     box-sizing: border-box;
-    margin:0 0 14px 0;
-    font-size:26px;
-    border-bottom:1px dashed #ccc;
-    padding-bottom:11px;
+    font-family: 'Franchise-Bold';
+    color: $green;
+    font-size: 4.5rem;
 }
 .ac-container h3 {
     box-sizing: border-box;
@@ -736,6 +745,7 @@ footer {
     font-size: 14px;
     color:#959595;
     line-height: 20px;
+    order: 5;
 }
 .ac-container p strong {
     color:#FF1F1F;
@@ -749,22 +759,37 @@ footer {
     line-height: 1.5;
     border-radius: 3px;
     margin-right:5px;
-    border:1px solid #ccc;
+    border:2px solid #bebebe;
+    width: 10rem;
+    height: 8.5rem;
+    font-family: 'Franchise-Bold';
+    color: #353535;
+    font-size: 5.5rem;
 }
 .ac-container input.day{
     box-sizing: border-box;
-    width:45px;
-    height:28px;
+    width: 10rem;
+    height: 8.5rem;
+    font-family: 'Franchise-Bold';
+    color: #353535;
+    font-size: 5.5rem;
 }
 .ac-container input.year{
     box-sizing: border-box;
-    width:70px;
-    height: 28px;
+    width: 10rem;
+    height: 8.5rem;
+    font-family: 'Franchise-Bold';
+    color: #353535;
+    font-size: 5.5rem;
 }
 .ac-container select {
     box-sizing: border-box;
-    height:28px;
+    width: 10rem;
+    height: 8.5rem;
     padding-left:4px;
+    font-family: 'Franchise-Bold';
+    color: #353535;
+    font-size: 5.5rem;
 }
 .ac-container button {
     box-sizing: border-box;

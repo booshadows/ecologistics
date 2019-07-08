@@ -32,7 +32,4 @@ $(document).ready(function(){
         $(this).closest("li").remove();
     });
 
-    // age verification
-
-
 });
