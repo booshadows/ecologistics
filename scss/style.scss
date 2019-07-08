@@ -842,4 +842,51 @@ footer {
 
 //footer
 
+//hamburger
+
+.hamburger {
+    cursor: pointer;
+    margin: auto;
+    transform: rotate(0);
+    transition: .5s ease-in-out;
+    -webkit-transform: rotate(0);
+    width: 60px;
+  }
+  .hamburger div {
+    background: $green;
+    border-radius: 9px;
+    display: block;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    transform: rotate(0);
+    transition: .25s ease-in-out;
+    -webkit-transform: rotate(0);
+    width: 100%;
+  }
+  .hamburger div:nth-child(1) {
+    top: 0;
+  }
+  .hamburger div:nth-child(2), .hamburger div:nth-child(3) {
+    top: 18px;
+  }
+  .hamburger div:nth-child(4) {
+    top: 36px;
+  }
+  .hamburger.open div:nth-child(1), .hamburger.open div:nth-child(4) {
+    left: 50%;
+    top: 18px;
+    width: 0%;
+  }
+  .hamburger.open div:nth-child(2) {
+    background: $green;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .hamburger.open div:nth-child(3) {
+    background: $green;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
 @import './responsive';

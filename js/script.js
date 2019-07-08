@@ -32,4 +32,10 @@ $(document).ready(function(){
         $(this).closest("li").remove();
     });
 
+    // hamburger 
+
+    $(".hamburger").click(function(){
+		$(this).toggleClass("open");
+	});
+
 });
