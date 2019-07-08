@@ -729,7 +729,9 @@ footer {
         font-family: 'Lato-Regular';
         font-size: 2rem;
         margin-top: 1rem;
-        margin-bottom: 4rem;
+        height: 7.4rem;
+        margin-bottom: 0rem;
+        line-height: 19px;
     }
 }
 .ac-container h2 {
@@ -811,23 +813,23 @@ footer {
 
 .ac-container .errors  {
     box-sizing: border-box;
-    margin:0 0 20px 0;
     font-size: 12px;
     line-height: 18px;
     color:#FF1F1F;
     order: 3;
+    height: 7.4rem;
+    margin-top: 1rem;
 }
 .ac-container .errors ul,
 .ac-container .errors li{
     box-sizing: border-box;
-    padding:0 0 3px 0;
+    padding:0 0 0 0;
     margin:0 0 0 0;
     list-style:none;
     color: #ce351c;
     font-family: 'Lato-Regular';
     font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin: 0;
 }
 
 .ac-container .fields {

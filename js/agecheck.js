@@ -147,8 +147,9 @@
         handleSuccess() {
           // const successMsg = `<h3>${settings.successMsg.header}</h3><p>${settings.successMsg.body}</p>`;
           // $('.ac-container').html(successMsg);
-          $('.ac-container .errors').hide();
-          $('.underAge').hide();
+          // $('.ac-container .errors').hide();
+          // $('.underAge').hide();
+          // $('.ac-container button').css("margin-top", "2rem");
           setTimeout(() => {
             $('.ac-container').animate({
               top: '-350px',
