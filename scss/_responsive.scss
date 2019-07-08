@@ -20,6 +20,10 @@
 
             }
         }
+
+        .navbar-toggler {
+            margin-right: 2rem;
+        }
     }
 
     #accordion {
@@ -56,6 +60,7 @@
 @media only screen and (max-width:599px) {
     .owl-carousel {
         .item {
+            padding-top: 10rem;
             p {
                 width: 90%;
             }
