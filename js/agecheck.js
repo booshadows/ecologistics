@@ -48,7 +48,7 @@
         validate() {
           _this.errors = [];
           if(
-            (/^([0-9]|[12]\d|3[0-1])$/.test(_this.day) === false) || (/^([0-9]|[12]\d|1[0-2])$/.test(_this.month) === false) || (/^(19|20)\d{2}$/.test(_this.year) === false)
+            (/^([0-9]|[12]\d|3[0-1])$/.test(_this.day) === false) || (/^([0-9]|[6]\d|1[0-2])$/.test(_this.month) === false) || (/^(19|20)\d{2}$/.test(_this.year) === false)
 
           )
            {
