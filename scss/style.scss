@@ -1,5 +1,5 @@
 @import './fonts';
-@import './responsive';
+
 
 //var
 $green: #5ad0a1;
@@ -121,6 +121,11 @@ a:hover {
 //nav
 
 nav {
+    .logo {
+        img {
+            width: 80%;
+        }
+    }
     background-color: #fefefe;
     padding: 0 !important;
     border-bottom: 1px solid #bebebe;
@@ -151,7 +156,7 @@ nav {
     a {
         text-decoration: none;
         font-family: 'Lato-Light';
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         padding: 0 5rem;
         line-height: 5rem;
         display: block;
@@ -305,6 +310,7 @@ section {
     #accordion {
         margin-top: 7rem;
 
+
         [aria-expanded="true"] .fa:before {
             content: "\f068" !important;
         }
@@ -315,6 +321,10 @@ section {
 
         .card {
             border: 0px;
+
+            &:first-child {
+                border-top: 1px solid #d6d6d6;
+            }
         }
 
 
@@ -502,7 +512,6 @@ section {
         flex-direction: column;
 
         .form-group {
-            width: 45%;
             margin-bottom: 3rem;
 
             input {
@@ -586,12 +595,15 @@ section {
             @include green-button;
             background-color: transparent;
             padding: 0.3rem 4.5rem;
+            @include flex-center;
         }
         p {
             text-align: center;
             color: $inputgrey;
             font-size: 1.4rem;
             font-family: 'Lato-Regular';
+            margin-top: 7rem;
+            margin-bottom: 0;
         }
     }
 }
@@ -677,3 +689,5 @@ footer {
 }
 
 //footer
+
+@import './responsive';
