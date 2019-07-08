@@ -1,106 +1,104 @@
-@media only screen and (max-width:991px) {
-    nav {
-        padding: 2rem 0 !important;
+@media only screen and (max-width: 991px) {
+  nav {
+    padding: 2rem 0 !important;
 
-        .navbar-nav {
+    .navbar-nav {
+      text-align: center;
+
+      li {
+        &:hover {
+          background-color: transparent !important;
+        }
+
+        &:hover a {
+          color: #70767d !important;
+        }
+
+        a {
+          padding: 0 !important;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      margin-right: 2rem;
+      padding: 0;
+      font-size: 1.25rem;
+      line-height: 1;
+      border: 0px solid transparent;
+      border-radius: 0.25rem;
+      margin-top: 0;
+      background-color: transparent !important;
+      color: transparent !important;
+      border-color: transparent !important;
+    }
+  }
+
+  #accordion {
+    .card {
+      .card-body {
+        .accordion-right {
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          display: flex;
+          margin-top: 4rem;
+          p {
             text-align: center;
-
-            li {
-                &:hover {
-                    background-color: transparent !important;
-                }
-
-                &:hover a {
-                    color: #70767d !important;
-                }
-
-                a {
-                    padding: 0 !important;
-                }
-
-            }
+          }
         }
 
-        .navbar-toggler {
-            margin-right: 2rem;
-            padding: 0;
-            font-size: 1.25rem;
-            line-height: 1;
-            background-color: transparent;
-            border: 0px solid transparent;
-            border-radius: .25rem;
-            margin-top: 0;
-            background-color: transparent !important;
-            color: transparent !important;
+        .embed-container {
+          max-width: 100%;
         }
+      }
     }
+  }
 
-    #accordion {
-        .card {
-            .card-body {
-                .accordion-right {
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    display: flex;
-                    margin-top: 4rem;
-                    p {
-                        text-align: center;
-                    }
-                }
-
-                .embed-container {
-                    max-width: 100%;
-                }
-            }
-        }
+  .contact-us {
+    .checkbox {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
-
-    .contact-us {
-        .checkbox {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-    }
+  }
 }
 
+@media only screen and (max-width: 599px) {
+  .owl-carousel {
+    .item {
+      padding-top: 10rem;
+      p {
+        width: 90%;
+      }
 
-@media only screen and (max-width:599px) {
-    .owl-carousel {
-        .item {
-            padding-top: 10rem;
-            p {
-                width: 90%;
-            }
+      h4 {
+        width: 90%;
+      }
+    }
+  }
+}
 
-            h4 {
-                width: 90%;
-            }
-        }
-    }
- }
-
- @media (max-width: 500px) {
-    .ac-container {
-        box-sizing: border-box;
-        width:auto;
-        margin-right:20px;
-        margin-left:1px;
-    }
-    .ac-container select, 
-    .ac-container input.day, 
-    .ac-container input.year,
-    .ac-container input.month{
-        box-sizing: border-box;
-        display:block;
-        margin-bottom:10px;
-        margin-right:0;
-        width:100%;
-    }
-    .ac-container button {
-        box-sizing: border-box;
-        display: block;
-        width: 100%;
-    }
+@media (max-width: 500px) {
+  .ac-container {
+    box-sizing: border-box;
+    width: auto;
+    margin-right: 20px;
+    margin-left: 1px;
+  }
+  .ac-container select,
+  .ac-container input.day,
+  .ac-container input.year,
+  .ac-container input.month {
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 0;
+    width: 100%;
+  }
+  .ac-container button {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+  }
 }
