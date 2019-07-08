@@ -48,7 +48,7 @@
         validate() {
           _this.errors = [];
           if(
-            (/^([0-9]|[12]\d|3[0-1])$/.test(_this.day) === false) || (/^([0-12]|[6]\d|1[0-2])$/.test(_this.month) === false) || (/^(19|20)\d{2}$/.test(_this.year) === false)
+            (/^([0-9]|[12]\d|3[0-1])$/.test(_this.day) === false) || (/^([0-9]|[12]\d|1[0-2])$/.test(_this.month) === false) || (/^(19|20)\d{2}$/.test(_this.year) === false)
 
           )
            {
@@ -96,7 +96,7 @@
           html += '</input>';
           html += '<input class="day" maxlength="2" placeholder="DD" />';
           html += '<input class="year" maxlength="4" placeholder="YY"/></div>';
-          html += '<button>Submit</button></div>';
+          html += '<button>Enter</button></div>';
           
           $('body').append(html);
   
@@ -172,6 +172,7 @@
           const underAgeMsg = `<h3>${settings.underAgeMsg}</h3>`;
           // $('.ac-container').html(underAgeMsg);
           $('.underAge').show();
+          $('.ac-container .errors').hide();
           if (settings.redirectOnFail !== '') {
             setTimeout(() => {
               window.location.replace(settings.redirectOnFail);

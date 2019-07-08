@@ -724,6 +724,12 @@ footer {
 
     .underAge {
         display: none;
+        order: 3;
+        color: #ce351c;
+        font-family: 'Lato-Regular';
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 4rem;
     }
 }
 .ac-container h2 {
@@ -731,6 +737,7 @@ footer {
     font-family: 'Franchise-Bold';
     color: $green;
     font-size: 4.5rem;
+    order: 1;
 }
 .ac-container h3 {
     box-sizing: border-box;
@@ -741,16 +748,17 @@ footer {
 }
 .ac-container p {
     box-sizing: border-box;
-    margin:0 0 20px 0;
-    font-size: 14px;
     color:#959595;
     line-height: 20px;
     order: 5;
+    font-family: 'Lato-Regular';
+    font-size: 1.2rem;
+    margin-top: 4rem;
 }
 .ac-container p strong {
     color:#FF1F1F;
 }
-.ac-container select, 
+
 .ac-container input {
     box-sizing: border-box;
     color:#555;
@@ -764,7 +772,11 @@ footer {
     height: 8.5rem;
     font-family: 'Franchise-Bold';
     color: #353535;
-    font-size: 5.5rem;
+    font-size: 5rem;
+    text-align: center;
+    &::placeholder {
+        text-align: center;
+    }
 }
 .ac-container input.day{
     box-sizing: border-box;
@@ -772,7 +784,7 @@ footer {
     height: 8.5rem;
     font-family: 'Franchise-Bold';
     color: #353535;
-    font-size: 5.5rem;
+    font-size: 5rem;
 }
 .ac-container input.year{
     box-sizing: border-box;
@@ -780,54 +792,26 @@ footer {
     height: 8.5rem;
     font-family: 'Franchise-Bold';
     color: #353535;
-    font-size: 5.5rem;
+    font-size: 5rem;
+   
 }
-.ac-container select {
-    box-sizing: border-box;
-    width: 10rem;
-    height: 8.5rem;
-    padding-left:4px;
-    font-family: 'Franchise-Bold';
-    color: #353535;
-    font-size: 5.5rem;
-}
+
 .ac-container button {
-    box-sizing: border-box;
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    padding: 4px 10px 4px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    width: 84px;
-    background:#8EB908;
-    color:#fff; 
-    text-shadow:1px 1px 0 #84A51D;
+    @include green-button;
+    @include transition;
+    order: 4;
+    background-color: transparent;
+    box-shadow: none;
  
 }
-.ac-container button:hover{
-    box-sizing: border-box;
-    background:#82A711;
-}
+
 .ac-container .errors  {
     box-sizing: border-box;
     margin:0 0 20px 0;
     font-size: 12px;
     line-height: 18px;
     color:#FF1F1F;
+    order: 3;
 }
 .ac-container .errors ul,
 .ac-container .errors li{
@@ -835,30 +819,18 @@ footer {
     padding:0 0 3px 0;
     margin:0 0 0 0;
     list-style:none;
+    color: #ce351c;
+    font-family: 'Lato-Regular';
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
-.ac-container .errors li span {
-    box-sizing: border-box;
-    font-size:9px;
-    background:#ebebeb; 
-    border:1px solid #ccc;
-    width: 14px;
-    height:14px;
-    border-radius:7px;
-    display:inline-block;
-    color:#FF1F1F;
-    font-weight: bold;
-    text-align: center;
-    margin-right:5px;
-    line-height: 13px;
-    position:relative;
-    top:-2px;
-    text-shadow: 1px 1px 0 #fff;
-    font-family:arial;
-}
+
 .ac-container .fields {
     box-sizing: border-box;
     clear:both;
     margin:10px 0 10px 0;
+    order: 2;
 }             
 @media (max-width: 500px) {
     .ac-container {
@@ -869,7 +841,8 @@ footer {
     }
     .ac-container select, 
     .ac-container input.day, 
-    .ac-container input.year{
+    .ac-container input.year,
+    .ac-container input.month{
         box-sizing: border-box;
         display:block;
         margin-bottom:10px;
