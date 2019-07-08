@@ -802,6 +802,10 @@ footer {
     order: 4;
     background-color: transparent;
     box-shadow: none;
+    width: 50%;
+    display: flex;
+    display: table;
+    margin: 0 auto;
  
 }
 
@@ -832,29 +836,7 @@ footer {
     margin:10px 0 10px 0;
     order: 2;
 }             
-@media (max-width: 500px) {
-    .ac-container {
-        box-sizing: border-box;
-        width:auto;
-        margin-right:20px;
-        margin-left:1px;
-    }
-    .ac-container select, 
-    .ac-container input.day, 
-    .ac-container input.year,
-    .ac-container input.month{
-        box-sizing: border-box;
-        display:block;
-        margin-bottom:10px;
-        margin-right:0;
-        width:100%;
-    }
-    .ac-container button {
-        box-sizing: border-box;
-        display: block;
-        width: 100%;
-    }
-}
+
 
 //footer
 
